@@ -19,7 +19,7 @@ class SIForm extends StatefulWidget {
 
 class _SIFormState extends State<SIForm> {
   var _formKey = GlobalKey<FormState>();
-  var _currencies = ['Naira' 'Dollars', 'Pounds'];
+  var _currencies = ['Naira', 'Dollars', 'Pounds'];
   final _minimumPadding = 5.0;
 
   var _currenciesItemSelected = '';
@@ -223,7 +223,7 @@ class _SIFormState extends State<SIForm> {
     String result =
         "After $term years, your interest would be $interest $_currenciesItemSelected and your investment would worth $total $_currenciesItemSelected";
     debugPrint(result);
-    
+
     return result;
   }
 
@@ -233,7 +233,6 @@ class _SIFormState extends State<SIForm> {
     termController.text = "";
     displayResult = '';
     _currenciesItemSelected = _currencies[0];
-    
   }
 
   TextStyle errorStyle() {
