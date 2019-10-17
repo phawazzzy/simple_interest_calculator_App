@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -59,6 +60,9 @@ class _SIFormState extends State<SIForm> {
                       keyboardType: TextInputType.number,
                       style: textStyle,
                       controller: principalController,
+                      inputFormatters: [
+                        WhitelistingTextInputFormatter.digitsOnly
+                      ],
                       validator: (String value) {
                         if (value.isEmpty) {
                           return 'please enter a principal amount';
@@ -82,6 +86,9 @@ class _SIFormState extends State<SIForm> {
                       keyboardType: TextInputType.number,
                       style: textStyle,
                       controller: rateController,
+                      inputFormatters: [
+                        WhitelistingTextInputFormatter.digitsOnly
+                      ],
                       validator: (String value) {
                         if (value.isEmpty) {
                           return 'please enter the rate';
@@ -105,9 +112,12 @@ class _SIFormState extends State<SIForm> {
                       children: <Widget>[
                         Expanded(
                           child: TextFormField(
-                            keyboardType: TextInputType.number,
+                            keyboardType: TextInputType.phone,
                             style: textStyle,
                             controller: termController,
+                            inputFormatters: [
+                              WhitelistingTextInputFormatter.digitsOnly
+                            ],
                             validator: (String value) {
                               if (value.isEmpty) {
                                 return 'please this field cant be empty';
